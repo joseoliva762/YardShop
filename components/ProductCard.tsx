@@ -20,7 +20,7 @@ export default function ProductCard ({ product }: ProductCardProps) {
     return (
         <>
             <div className="flex flex-col gap-3 w-36 sm:w-60">
-                <figure className="h-36 relative w-36 sm:h-60 sm:w-60">
+                <figure className="animate-skeleton h-36 relative rounded-3xl w-36 sm:h-60 sm:w-60 bg-red-300">
                     <img 
                         className="rounded-3xl object-cover h-full w-full" 
                         src={ images[0] } 

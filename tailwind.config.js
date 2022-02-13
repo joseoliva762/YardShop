@@ -21,8 +21,16 @@ module.exports = {
       },
       gridTemplateRows: {
         'shop-a1a': 'auto 1fr auto'
+      },
+      keyframes: {
+        skeleton: {
+          '0%, 100%': { background: '#F7F7F7' },
+          '50%': { background: '#C7C7C7' },
+        }
+      },
+      animation: {
+        skeleton: 'skeleton 2s ease-in-out infinite',
       }
-
     },
   },
   plugins: [],
