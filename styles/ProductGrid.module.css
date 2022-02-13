@@ -1,0 +1,13 @@
+.autoFill {
+    grid-template-columns: repeat(auto-fill, 240px);
+}
+
+.cartGrid {
+    grid-template-columns: auto 1fr auto auto;
+}
+
+@media (max-width: 640px) {
+    .autoFill {
+        grid-template-columns: repeat(auto-fill, 144px);
+    }
+}
