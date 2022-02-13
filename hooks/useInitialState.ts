@@ -11,11 +11,17 @@ const useInitialState = () => {
   const [state, setState] = useState(initialState);
 
   const addToCart = (payload: Product) => {
+    const alreadyExist = !!state.cart
+      .filter((product: Product) => product.id === payload.id)
+      .length;
+    
+    if (alreadyExist) return;
     setState({
       ...state,
-      cart: state.cart.includes(payload)
-        ? state.cart
-        : [ ...state.cart, payload ],
+      cart: [ 
+        ...state.cart, 
+        payload 
+      ],
     });
   };
 
