@@ -23,7 +23,7 @@ export default function Header () {
                     <Image src={menuIcon} alt='Menu' />
                 </figure>
                 <section className="flex gap-3 items-center justify-start">
-                    <Link href={'/'}>
+                    <Link href={'/'} passHref>
                         <figure className="gird h-6 place-content-center sm:hidden md:grid hover:cursor-pointer">
                             <Image className="" src={yardLogo} alt="Yard Sales"/>
                         </figure>

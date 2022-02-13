@@ -17,19 +17,11 @@ const Home: NextPage = () => {
         <title>
           YardShop - Home
         </title>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-FH2YD29B8Q"></script>
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-FH2YD29B8Q');
-          `
-        }} />
       </Head>
       <Products>
         { products.map((product: Product) => (
-          <ProductCard product={product} key={`product-${product.id}`} />)
+            <ProductCard product={product} key={`product-${product.id}`} />
+          )
         )}
       </Products>
     </>

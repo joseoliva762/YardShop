@@ -6,7 +6,6 @@ class ShopDocument extends Document {
             <>
                 <Html lang="en">
                     <Head>
-                        <title>YardShop</title>
                         <meta charSet="utf-8" />
                         <meta name="viewport" content="width=device-width, initial-scale=1" />
                     </Head>

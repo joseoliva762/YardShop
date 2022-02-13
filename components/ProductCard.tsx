@@ -13,6 +13,10 @@ interface ProductCardProps {
 export default function ProductCard ({ product }: ProductCardProps) {
     const { images, title, price } = product;
     const { state, addToCart } = useContext<StateContext>(AppContext);
+    const isInCart = !!state.cart
+        .filter(({ id }: Product) => id === product.id)
+        .length;
+
     return (
         <>
             <div className="flex flex-col gap-3 w-36 sm:w-60">
@@ -29,7 +33,7 @@ export default function ProductCard ({ product }: ProductCardProps) {
                         <p className="text-sm text-shop-very-light-pink">{title}</p>
                     </div>
                     <figure className="h-9 w-9 hover:cursor-pointer" onClick={() => addToCart(product)}>
-                        <Image className="h-full w-full" src={state.cart.includes(product) ? addedToCartIcon : addToCartIcon} alt="Add" />
+                        <Image className="h-full w-full" src={isInCart ? addedToCartIcon : addToCartIcon} alt="Add" />
                     </figure>
                 </div>
             </div>
