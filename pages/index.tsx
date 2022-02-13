@@ -9,7 +9,6 @@ import { Product } from '@models/cart.model';
 const API = process.env.NEXT_PUBLIC_PRODUCTS_API || '';
 
 const Home: NextPage = () => {
-  console.log({API})
   const products = useGetProducts(API);
 
   return (
@@ -18,6 +17,15 @@ const Home: NextPage = () => {
         <title>
           YardShop - Home
         </title>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-FH2YD29B8Q"></script>
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-FH2YD29B8Q');
+          `
+        }} />
       </Head>
       <Products>
         { products.map((product: Product) => (
